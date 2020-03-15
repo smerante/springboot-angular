@@ -1,0 +1,8 @@
+.error-sign {
+    color:red;
+    border-color: red;
+}
+input.error-sign {
+    color:black; 
+    border-color: red;
+}

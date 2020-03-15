@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Welcome</title>
+  <base href="/welcome">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <div class="container-fluid">
+    <br/>
+      <form  id = "personalInfoForm" novalidate>
+        <h1 class="page-header text-center">Personal Information</h1>
+        <div class="row">
+            <div class="col-md-4">
+              <label for="name">First Name</label>
+              <input id="firstName" name="firstName" [ngClass]="validName ? 'form-control' : 'form-control error-sign'" type="text" (ngModelChange)="onNameChange($event)" [(ngModel)]="personalInfo.firstName"   aria-describedby="nameHelp" placeholder="First Name">
+              <div [hidden]="validName" class="error">
+                <small class="glyphicon glyphicon-warning-sign error-sign">Please Enter a valid first name.</small>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <label for="lastName">Last Name</label>
+              <input name="lastName" id="lastName" type="text" [ngClass]="validLastName ? 'form-control' : 'form-control error-sign'"  (ngModelChange)="onLastNameChange($event)" [(ngModel)]="personalInfo.lastName"  aria-describedby="lastNameHelp" placeholder="Last Name">
+              <div [hidden]="validLastName" class="error">
+                <small id="lastNameHelp" class="glyphicon glyphicon-warning-sign error-sign">Please Enter a valid last name.</small>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="Email">Email</label>
+              <input name="Email" id="Email" type="text" [ngClass]="validEmail ? 'form-control' : 'form-control error-sign'"  (ngModelChange)="onEmailChange($event)" [(ngModel)]="personalInfo.email"  aria-describedby="EmailHelp" placeholder="Email@Email.com">
+              <div [hidden]="validEmail" class="error">
+                <small id="EmailHelp" class="glyphicon glyphicon-warning-sign error-sign">Please Enter a valid email.</small>
+              </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Date">Date of birth:</label>
+            <input name="Date" id="Date" type="date" [ngClass]="validDate ? 'form-control' : 'form-control error-sign'"  (ngModelChange)="onDateChange($event)" [(ngModel)]="personalInfo.dob"  aria-describedby="DateHelp" placeholder="Date@Date.com">
+            <div [hidden]="validDate" class="error">
+              <small id="DateHelp" class="glyphicon glyphicon-warning-sign error-sign">Please Enter a valid Date, must be older than 18</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="Cell">Cell</label>
+            <div class="input-group">
+              <input phone-num name="Cell" id="Cell" type="text" [ngClass]="validCell ? 'form-control' : 'form-control error-sign'"  (ngModelChange)="onCellChange($event)" [(ngModel)]="personalInfo.cell"  aria-describedby="CellHelp" placeholder="123-123-1234">
+            </div>
+            <div [hidden]="validCell" class="error">
+              <small id="CellHelp" class="glyphicon glyphicon-warning-sign error-sign">Please Enter a valid Cell.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+          <label for="sin">SIN:</label>
+          <div class="input-group">
+            <input sin name="sin" id="sin" type="password" class="form-control" [(ngModel)]="personalInfo.sin" [ngClass]="validSIN ? 'form-control' : 'form-control error-sign'"  (ngModelChange)="onSINChange($event)"  aria-describedby="SINHelp" placeholder="###-###-###">
+            <div class="input-group-append">
+              <span class="input-group-text" id="maskedSin">{{personalInfo.sin | sinFilter}}</span>
+            </div> 
+          </div>
+          <input type="checkbox" (click)="showSin()">Show Sin
+           <div [hidden]="validSIN" class="error">
+                <small id="SINHelp" class="glyphicon glyphicon-warning-sign error-sign">Please Enter a valid SIN, ###-###-### </small>
+              </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button id="submitButton" [disabled]="invalidForm()"(click)="submitForm()"class="btn center-block btn-primary">Next</button>
+        </div>
+      </form>
+      <br/>
+  </div>
+  <div class="sample">
+    <h1>Sample HTML body for style.</h1>
+    <p>Be <b>bold</b> in stating your key points. Put them in a list: </p>
+    <ul>
+    <li>The first item in your list</li>
+    <li>The second item; <i>italicize</i> key words</li>
+    </ul>
+    <p>Improve your image by including an image. </p>
+    <p><img src="http://www.mygifs.com/CoverImage.gif" alt="A Great HTML Resource"></p>
+    <p>Add a link to your favorite <a href="https://www.google.com/">Web site</a>.
+    Break up your page with a horizontal rule or two. </p>
+    <hr>
+    <nav class="navBar">
+      <ul>
+        <li>
+          <a href="">Test 1</a>
+        </li>
+        <li>
+          <a href="">Test 2</a>
+        </li>
+        <li>
+          <a href="">Test 3</a>
+        </li>
+        <li>
+          <a href="">Test 4</a>
+        </li>
+      </ul>
+    </nav>
+    <p>Finally, link to <a href="www.google.com">another page</a> in your own Web site.</p>
+    <!-- And add a copyright notice.-->
+    <p>&#169; Wiley Publishing, 2011</p>
+  </div>
+</body>
+</html>

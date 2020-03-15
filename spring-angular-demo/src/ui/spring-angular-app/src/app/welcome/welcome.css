@@ -1,0 +1,48 @@
+nav.navBar {
+  padding: 10px;
+}
+
+nav.navBar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+nav.navBar li {
+  display: inline-block;
+  width: 25%;
+}
+
+nav.navBar a {
+  display: block;
+  padding: 6px  12px;
+  text-decoration: none;
+  background-color: grey;
+}
+
+h1 {
+  color: #001a00;
+  text-decoration: underline;
+}
+
+.error-sign {
+  color: red;
+  border-color: red;
+}
+
+input.error-sign {
+  color: black;
+  border-color: red;
+}
+
+form {
+  background-color: #cccccc;
+  padding: 20px;
+}
+
+.sample h1 {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+/*# sourceMappingURL=welcome.css.map */
